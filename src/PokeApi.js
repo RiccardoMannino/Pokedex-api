@@ -43,6 +43,7 @@ export function PokeApi() {
         className="bg-slate-200 p-2 rounded-lg"
         placeholder="Cerca..."
         type="text"
+        value={filterPokemon}
         onChange={(e) => setFilterPokemon(e.target.value)}
       />
       <div className="w-full flex flex-wrap justify-center m-2 font-semibold capitalize">
@@ -55,14 +56,12 @@ export function PokeApi() {
             }
           })
           .map((p, index) => (
-            <>
-              {/* Card */}
+            <div key={index}>
               <RenderPokemon
                 id={p.id}
                 name={p.name}
                 image={p.sprites.other.dream_world.front_default}
                 type={p.types[0].type.name}
-                key={index}
                 hp={p.stats[0].base_stat}
                 atk={p.stats[1].base_stat}
                 def={p.stats[2].base_stat}
@@ -70,7 +69,7 @@ export function PokeApi() {
                 spd={p.stats[4].base_stat}
                 speed={p.stats[5].base_stat}
               />
-            </>
+            </div>
           ))}
       </div>
       {/*bottone per fetchare altri 20 pokemon  */}
