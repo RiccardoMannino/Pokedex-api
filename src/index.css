@@ -11,6 +11,8 @@ body {
     @apply flex flex-col items-center justify-center border border-[#efefef] rounded shadow-[0_3px_15px_rgba(0,0,0,0.089)] min-w-[160px] py-6 m-[5px];
   }
 }
+
+/* Colori Card che cambiano a seconda del tipo di pokemon */
 .psychic {
   background-color: #ba51e4;
 }

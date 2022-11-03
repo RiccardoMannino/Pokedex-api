@@ -22,6 +22,7 @@ export const RenderPokemon = ({
     setModale(!modale);
   }
   return (
+    // Card Principale
     <div className={style}>
       <div className="flex p-2 ">
         <img className="w-[100px] h-[100px] mr-2" src={image} alt={name} />
@@ -34,6 +35,7 @@ export const RenderPokemon = ({
           </button>
         </div>
       </div>
+      {/* Modale */}
       {modale && (
         <Modale
           name={name}

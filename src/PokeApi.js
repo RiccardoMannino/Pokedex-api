@@ -8,6 +8,8 @@ export function PokeApi() {
   );
   const [filterPokemon, setFilterPokemon] = useState("");
 
+  // funzione che permetti di far visualizzare i primi 20 pokemon
+
   const fetchPokemon = async () => {
     const res = await fetch(morePokemon);
     const data = await res.json();
@@ -16,6 +18,8 @@ export function PokeApi() {
 
     getPokemon(data.results);
   };
+
+  // funzione che attraverso un ciclo permette di fetchare ulteriori dati
 
   const getPokemon = (result) => {
     result.forEach(async (pokemon) => {
@@ -34,6 +38,7 @@ export function PokeApi() {
   return (
     <div className=" h-screen flex flex-col w-screen items-center mb-2">
       <p className="font-bold font mt-1 text-2xl mb-2">Pokedex</p>
+      {/* input con filtro */}
       <input
         className="bg-slate-200 p-2 rounded-lg"
         placeholder="Cerca..."
@@ -51,6 +56,7 @@ export function PokeApi() {
           })
           .map((p, index) => (
             <>
+              {/* Card */}
               <RenderPokemon
                 id={p.id}
                 name={p.name}
@@ -67,6 +73,7 @@ export function PokeApi() {
             </>
           ))}
       </div>
+      {/*bottone per fetchare altri 20 pokemon  */}
       <button
         className="bg-slate-300 font-semibold rounded w-fit justify-center mb-3 p-2 "
         onClick={() => fetchPokemon()}
