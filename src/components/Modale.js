@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import "../index.css";
 
 export function Modale({
 	image,
+	id,
 	name,
 	type,
 	hp,
@@ -11,6 +11,7 @@ export function Modale({
 	spa,
 	spd,
 	speed,
+	description,
 	modale,
 	toggle,
 }) {
@@ -43,12 +44,19 @@ export function Modale({
 							<p>Difesa speciale: {spd}</p>
 							<p>Velocità: {speed}</p>
 						</div>
-						<button
-							className=" place-self-center rounded h-[30px] mt-3 items-end bg-slate-300 px-3"
-							onClick={toggle}
-						>
-							Chiudi
-						</button>
+						<div className="grid grid-rows-2">
+							<p>
+								{id < 29
+									? `Descrizione: ${description}`
+									: `Descrizione non disponible`}
+							</p>
+							<button
+								className=" place-self-center rounded h-[30px] mt-3 items-end bg-slate-300 px-3"
+								onClick={toggle}
+							>
+								Chiudi
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

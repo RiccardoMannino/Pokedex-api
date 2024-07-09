@@ -7,9 +7,6 @@ export function PokeApi() {
 		"https://pokeapi.co/api/v2/pokemon?limit=20"
 	);
 	const [filterPokemon, setFilterPokemon] = useState("");
-	const [language, setLanguage] = useState(
-		"https://pokeapi.co/api/v2/language/8/"
-	);
 
 	// funzione che permetti di far visualizzare i primi 20 pokemon
 
@@ -82,7 +79,7 @@ export function PokeApi() {
 			{/*bottone per fetchare altri 20 pokemon  */}
 			<button
 				className={
-					"col-start-3 col-end-3 p-2 my-3 font-semibold  rounded place-self-center  bg-slate-300 w-fit"
+					"col-start-3 col-end-3 p-3 my-3 font-semibold rounded place-self-center  bg-slate-300 w-fit"
 				}
 				onClick={() => fetchPokemon()}
 			>
