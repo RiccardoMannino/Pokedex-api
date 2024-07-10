@@ -23,18 +23,18 @@ export const RenderPokemon = ({
 		setModale(!modale);
 	}
 
-	// Bug dell API dall'id 30 non ci sono più descrizioni disponibili
 	useEffect(() => {
 		async function getDescription(id) {
-			const res = await fetch(`https://pokeapi.co/api/v2/characteristic/${id}`);
+			const res = await fetch(
+				`https://pokeapi.co/api/v2/pokemon-species/${id}`
+			);
 			const data = await res.json();
-
-			if (id <= 29) {
-				setDescription(data.descriptions.at(6).description);
-			}
+			setDescription(data.flavor_text_entries.at(35).flavor_text);
+			console.log(data.flavor_text_entries);
 		}
+
 		getDescription(id);
-	}, []);
+	}, [id]);
 
 	return (
 		// Card Principale
