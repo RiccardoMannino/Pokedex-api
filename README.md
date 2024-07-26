@@ -53,7 +53,7 @@ I contributi sono benvenuti! Se desideri contribuire, segui questi passaggi:
     ```
 3. Fai le tue modifiche e committale:
     ```bash
-    git commit -m 'Aggiungi nuova funzionalità'
+    git commit -m 'Add:'
     ```
 4. Push del branch:
     ```bash
